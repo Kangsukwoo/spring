@@ -9,36 +9,36 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="modify" method="post">
-	<input type="hidden" name="bId" value="${content_view.bId }">
+<form action="reply" method="get">
+	<input type="hidden" name="bId" value="${reply_view.bId }">
+	<input type="hidden" name="bGroup" value="${reply_view.bGroup }">
+	<input type="hidden" name="bStep" value="${reply_view.bStep }">
+	<input type="hidden" name="bIndent" value="${reply_view.bIndent }">
 	<table width="500" border="1" cellpadding="0">
 		<tr>
 			<td>번호</td>
-			<td>${content_view.bId }</td>
+			<td>${reply_view.bId }</td>
 		</tr>
 		<tr>
 			<td>히트</td>
-			<td>${content_view.bHit }</td>
+			<td>${reply_view.bHit }</td>
 		</tr>	
 		<tr>
 			<td>이름</td>
-			<td><input type="text" name="bName" value="${content_view.bName }"></td>
+			<td><input type="text" name="bName" value="${reply_view.bName }"></td>
 		</tr>	
 		<tr>
 			<td>제목</td>
-			<td><input type="text" name="bTitle" value="${content_view.bTitle }"></td>
+			<td><input type="text" name="bTitle" value="(re)"></td>
 		</tr>
 		<tr>
 			<td>내용</td>
-			<td><textarea rows="10" name="bContent">${content_view.bContent }</textarea></td>
+			<td><textarea rows="10" name="bContent"></textarea></td>
 		</tr>	
 		<tr>
 			<td colspan="2">
-				<input type="submit" value="수정">
-
-				<input type="button" onclick="location.href='list'" value="목록보기">
-				<input type="button" onclick="location.href='delete?bId=${content_view.bId}'" value="삭제" > 
-				<input type="button" onclick="location.href='reply_view?bId=${content_view.bId}'" value="답변"> 
+				<input type="submit" value="입력">
+				<input type="button" onclick="location.href='javascript:history.back()'" value="뒤로가기">
 			</td>			
 		</tr>		
 	</table>
